@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen & Gemini Model Explorer</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@1.0.0"
+        }
+      }
+    </script>
+</head>
+<body>
+    <header>
+      <h1>Imagen & Gemini Model Explorer</h1>
+      <div id="controls">
+        <label for="model-selector">Select a model:</label>
+        <select id="model-selector" name="model-selector" aria-label="Select an Imagen model"></select>
+      </div>
+    </header>
+    <main>
+      <div id="image-editing-controls">
+        <div class="upload-area">
+            <label for="image-upload">1. Upload Image</label>
+            <input type="file" id="image-upload" accept="image/*" aria-label="Upload an image to edit">
+            <img id="image-preview" src="#" alt="Your uploaded image preview" style="display: none;">
+        </div>
+        <div class="prompt-area">
+            <label for="prompt-input">2. Describe your edits</label>
+            <textarea id="prompt-input" rows="3" placeholder="e.g., add a party hat on the panther"></textarea>
+            <button id="generate-edit-btn">Generate</button>
+        </div>
+      </div>
+      <div id="image-gallery" aria-live="polite" aria-busy="false"></div>
+    </main>
+    <script type="module" src="index.tsx"></script>
+</body>
+</html>
