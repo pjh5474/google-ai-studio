@@ -21,6 +21,7 @@ if (!modelSelector || !imageGallery || !imageEditingControls || !imageUpload || 
 }
 
 // --- GEMINI SETUP ---
+console.log('apikey: ', process.env.API_KEY)
 const ai = new GoogleGenAI({apiKey: process.env.API_KEY});
 
 // --- AVAILABLE MODELS ---
